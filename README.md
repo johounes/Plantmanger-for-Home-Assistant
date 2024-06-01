@@ -1,5 +1,6 @@
 # Plantmanger-for-Home-Assistant
 keep track of the Plants and their age in your (indoor) garden 
+## English Below
 
 # Pflanzenmanager für Home Assistant
 
@@ -58,6 +59,65 @@ keep track of the Plants and their age in your (indoor) garden
 
 ## Dokumentation und Unterstützung
 
-Weitere Informationen und eine detaillierte Dokumentation finden Sie auf [example.com](https://example.com).
-
 Wenn Sie Fragen oder Probleme haben, öffnen Sie bitte ein Issue auf GitHub oder wenden Sie sich an die Community.
+
+
+## English Instructions 
+
+Pflanzenmanager for Home Assistant
+
+Pflanzenmanager is a Home Assistant plugin that allows you to manage the growth and care of your plants. With this plugin, you can add mother plants, cuttings, and delete both mother plants and cuttings.
+Features
+
+    Add Mother Plants: Add new mother plants with a name and starting age.
+    Cut Cuttings: Cut cuttings from existing mother plants and track their growth.
+    Delete Plants: Remove mother plants and cuttings that are no longer needed.
+    Automatic Display: Dynamically displays all plants and their cuttings.
+
+Installation
+Prerequisites
+
+    Home Assistant must be installed and configured.
+    HACS (Home Assistant Community Store) must be installed to add custom cards.
+
+Step-by-Step Guide
+
+    Add HACS Integration
+
+    Open HACS in your Home Assistant dashboard, click on "Frontend", search for "Pflanzenmanager", and install the integration.
+
+    Add Lovelace Resource
+
+    Add the following resource to your configuration.yaml:
+
+    yaml
+
+lovelace:
+  resources:
+    - url: /hacsfiles/pflanzenmanager-card/pflanzenmanager-card.js
+      type: module
+
+Activate the Plugin
+
+Go to Settings > Integrations > Pflanzenmanager and follow the configuration flow to activate the integration.
+
+Restart Home Assistant
+
+Restart Home Assistant to ensure all changes are applied.
+
+Add Card and Test
+
+Add the new card to your Lovelace dashboard:
+
+yaml
+
+    type: 'custom:pflanzenmanager-card'
+
+    Test if the mother plants and cuttings can be added, displayed, and deleted as expected.
+
+Documentation and Support
+
+If you have any questions or issues, please open an issue on GitHub or reach out to the community.
+
+
+
