@@ -1,0 +1,23 @@
+add_plant:
+  description: "Fügt eine neue Mutterpflanze hinzu"
+  fields:
+    name:
+      description: "Name der Pflanze"
+      example: "Tomato"
+    age:
+      description: "Alter der Pflanze in Tagen"
+      example: 10
+
+cut_cutting:
+  description: "Schneidet einen Steckling"
+  fields:
+    sensor_name:
+      description: "Name des Sensors der Mutterpflanze"
+      example: "sensor.wachstum_tage_tomato_1"
+
+delete_plant:
+  description: "Löscht eine Pflanze"
+  fields:
+    entity_id:
+      description: "ID der zu löschenden Pflanze"
+      example: "sensor.wachstum_tage_tomato_1"

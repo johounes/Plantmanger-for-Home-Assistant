@@ -1,0 +1,11 @@
+{
+  "domain": "pflanzenmanager",
+  "name": "Pflanzenmanager",
+  "version": "1.0.0",
+  "documentation": "https://example.com",
+  "dependencies": [],
+  "codeowners": ["@Johounes"],
+  "requirements": [],
+  "config_flow": true
+}
+
