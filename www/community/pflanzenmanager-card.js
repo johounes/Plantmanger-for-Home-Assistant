@@ -3,13 +3,13 @@ class PflanzenmanagerCard extends HTMLElement {
     if (!this.content) {
       this.innerHTML = `
         <style>
-          /* Ihre CSS-Stile */
+          /* Your CSS styles */
         </style>
         <div id="content">
           <h1>Pflanzenmanager</h1>
-          <input type="text" id="plantName" placeholder="Name der Pflanze">
-          <input type="number" id="plantAge" placeholder="Alter in Tagen">
-          <button id="addPlant">Mutterpflanze hinzufügen</button>
+          <input type="text" id="plantName" placeholder="Name of the plant">
+          <input type="number" id="plantAge" placeholder="Age in days">
+          <button id="addPlant">Add Mother Plant</button>
           <div id="plantList"></div>
         </div>
       `;
@@ -29,7 +29,7 @@ class PflanzenmanagerCard extends HTMLElement {
       });
     }
 
-    // Aktualisieren Sie die Anzeige basierend auf den aktuellen Home Assistant Daten
+    // Update the display based on current Home Assistant data
     const entities = hass.states;
     this.plantList.innerHTML = '';
     for (let entity_id in entities) {
@@ -37,9 +37,9 @@ class PflanzenmanagerCard extends HTMLElement {
         const plant = entities[entity_id];
         const plantDiv = document.createElement('div');
         plantDiv.innerHTML = `
-          <p>${plant.attributes.friendly_name}: ${plant.state} Tage</p>
-          <button class="cuttingButton" data-entity="${entity_id}">Steckling geschnitten</button>
-          <button class="deleteButton" data-entity="${entity_id}">Pflanze löschen</button>
+          <p>${plant.attributes.friendly_name}: ${plant.state} days</p>
+          <button class="cuttingButton" data-entity="${entity_id}">Cut Cutting</button>
+          <button class="deleteButton" data-entity="${entity_id}">Delete Plant</button>
         `;
         plantDiv.querySelector('.cuttingButton').addEventListener('click', () => {
           hass.callService('pflanzenmanager', 'cut_cutting', {
