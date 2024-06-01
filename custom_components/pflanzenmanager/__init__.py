@@ -15,11 +15,18 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     hass.services.async_register(DOMAIN, 'cut_cutting', cut_cutting)
     hass.services.async_register(DOMAIN, 'delete_plant', delete_plant)
 
+    # Add the frontend resource
+    await hass.helpers.event.async_call_later(0, setup_frontend)
+
     return True
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     _LOGGER.info("Setting up Pflanzenmanager entry")
     return True
+
+async def setup_frontend(hass):
+    from homeassistant.components.frontend import add_extra_js_url
+    add_extra_js_url(hass, "/hacsfiles/pflanzenmanager-card/pflanzenmanager-card.js")
 
 async def add_plant(service: ServiceCall):
     name = service.data.get('name')
