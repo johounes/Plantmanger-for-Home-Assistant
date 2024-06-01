@@ -4,9 +4,15 @@
   "version": "1.0.0",
   "documentation": "https://example.com",
   "dependencies": [],
-  "codeowners": ["@Johounes"],
+  "codeowners": ["@YourUsername"],
   "requirements": [],
   "config_flow": true,
-  "homeassistant": "2024.4.2"
+  "homeassistant": "2024.4.2",
+  "integration_type": "custom",
+  "resources": [
+    {
+      "type": "module",
+      "url": "/hacsfiles/pflanzenmanager-card/pflanzenmanager-card.js"
+    }
+  ]
 }
-
